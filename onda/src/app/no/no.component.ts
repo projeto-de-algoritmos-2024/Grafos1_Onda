@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import internal from 'stream';
 
 @Component({
@@ -12,20 +12,25 @@ import internal from 'stream';
 
 
 export class NoComponent {
-  numerodono:any;
-  tempo:any;
+  @Input() numerodono:any;
+  @Input() tempo:any;
+  @Input() tamanho:any;
   texto: any;
   estilo:any;
 
-  tamanhodono(valor:any) {
-    this.estilo = "width: "+valor+"px; height: "+valor+"px;";
+  tamanhodono() {
+    this.estilo = "width: "+this.tamanho+"px; height: "+this.tamanho+"px;";
   }
   nomeiaono(referencia: any) {
-    this.numerodono = referencia;
     this.texto = "Nó de numero "+referencia+".";
   }
-  tempodeexecução(valor: any) {
+  tempodeexecucao(valor: any) {
     this.tempo = valor;
+  }
+  ngOnChanges() {
+    this.tamanhodono();
+    this.nomeiaono(this.numerodono);
+    this.tempodeexecucao(this.tempo);
   }
 
 }

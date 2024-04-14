@@ -11,7 +11,7 @@ describe('NoComponent', () => {
       imports: [NoComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(NoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
