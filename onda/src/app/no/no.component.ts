@@ -12,13 +12,13 @@ import internal from 'stream';
 
 
 export class NoComponent {
-  tamanho = 20;
   numerodono:any;
   tempo:any;
   texto: any;
+  estilo:any;
 
   tamanhodono(valor:any) {
-    this.tamanho = valor;
+    this.estilo = "width: "+valor+"px; height: "+valor+"px;";
   }
   nomeiaono(referencia: any) {
     this.numerodono = referencia;
