@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { isPlatformBrowser } from '@angular/common';
 import { NoComponent } from './no/no.component';
 
 @Component({
@@ -11,6 +11,9 @@ import { NoComponent } from './no/no.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any
+  ) { }
   title = 'onda';
   maximodenos: any;
   larguraTela: any;
@@ -19,8 +22,8 @@ export class AppComponent {
   nos: any;
   grafo: any = [];
   populagrafo() {
-    const colunas = this.larguraTela / (this.tamanhono - 5);
-    const linhas = this.alturaTela / (this.tamanhono - 5);
+    const colunas = Math.trunc(this.larguraTela / (this.tamanhono));
+    const linhas = Math.trunc(this.alturaTela / (this.tamanhono));
     let cont = 0;
     for (let i = 0; i < colunas; i++) {
       for (let j = 0; j < linhas; j++) {
@@ -82,14 +85,23 @@ export class AppComponent {
             ];
           }
         }
+        console.log(cont);
         cont++;
       }
     }
+    console.log("acabou");
   }
-  ngOnChanges() {
-    this.larguraTela = window.innerWidth / 5;
-    this.alturaTela = window.innerHeight / 5;
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.larguraTela = window.innerWidth ;
+      this.alturaTela = window.innerHeight ;
+      console.log(this.larguraTela);
+      console.log(this.alturaTela);
+    }
+
     this.maximodenos = Math.trunc(this.larguraTela) * Math.trunc(this.alturaTela);
     this.nos = (this.tamanhono - 5) / this.maximodenos;
+    this.populagrafo();
+
   }
 }
