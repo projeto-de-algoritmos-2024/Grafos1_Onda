@@ -25,8 +25,8 @@ export class AppComponent {
     const colunas = Math.trunc(this.larguraTela / (this.tamanhono));
     const linhas = Math.trunc(this.alturaTela / (this.tamanhono));
     let cont = 0;
-    for (let i = 0; i < colunas; i++) {
-      for (let j = 0; j < linhas; j++) {
+    for (let j = 0; j < linhas; j++) {
+      for (let i = 0; i < colunas; i++) {
         if ((cont - colunas) >= 0 && (cont + colunas) <= (colunas - 1)) {
           if (j == 0) {
             this.grafo[cont] = [
