@@ -27,14 +27,14 @@ export class AppComponent {
     let cont = 0;
     for (let i = 0; i < colunas; i++) {
       for (let j = 0; j < linhas; j++) {
-        if (cont - colunas >= 0 && cont + colunas <= colunas - 1) {
+        if ((cont - colunas) >= 0 && (cont + colunas) <= (colunas - 1)) {
           if (j == 0) {
             this.grafo[cont] = [
               cont + 1,
               cont + colunas,
               cont - colunas,
             ];
-          } else if (j == linhas - 1) {
+          } else if (j == (linhas - 1)) {
             this.grafo[cont] = [
               cont - 1,
               cont + colunas,
@@ -48,13 +48,13 @@ export class AppComponent {
               cont - colunas,
             ];
           }
-        }else if(cont - colunas < 0 ){
+        }else if((cont - colunas) < 0 ){
           if (j == 0) {
             this.grafo[cont] = [
               cont + 1,
               cont + colunas,
             ];
-          } else if (j == linhas - 1) {
+          } else if (j == (linhas - 1)) {
             this.grafo[cont] = [
               cont - 1,
               cont + colunas,
@@ -72,7 +72,7 @@ export class AppComponent {
               cont + 1,
               cont - colunas,
             ];
-          } else if (j == linhas - 1) {
+          } else if (j == (linhas - 1)) {
             this.grafo[cont] = [
               cont - 1,
               cont - colunas,
@@ -85,7 +85,7 @@ export class AppComponent {
             ];
           }
         }
-        console.log(cont);
+        console.log(cont+", "+colunas+", "+linhas);
         cont++;
       }
     }
