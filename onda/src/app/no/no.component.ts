@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import internal from 'stream';
 
 @Component({
   selector: 'app-no',
@@ -7,13 +8,25 @@ import { Component } from '@angular/core';
   templateUrl: './no.component.html',
   styleUrl: './no.component.scss'
 })
-let tamanho = 20;
-let numero;
+
 
 
 export class NoComponent {
+  tamanho = 20;
+  numerodono:any;
+  tempo:any;
+  texto: any;
 
-  tamanho = tamanho;
-  numero-no = numero;
+  tamanhodono(valor:any) {
+    this.tamanho = valor;
+  }
+  nomeiaono(referencia: any) {
+    this.numerodono = referencia;
+    this.texto = "Nó de numero "+referencia+".";
+  }
+  tempodeexecução(valor: any) {
+    this.tempo = valor;
+  }
+
 }
 
