@@ -26,7 +26,17 @@ export class AppComponent {
       for (let j = 0; j < linhas; j++) {
         if (cont - colunas >= 0 && cont + colunas <= colunas - 1) {
           if (j == 0) {
+            this.grafo[cont] = [
+              cont + 1,
+              cont + colunas,
+              cont - colunas,
+            ];
           } else if (j == linhas - 1) {
+            this.grafo[cont] = [
+              cont - 1,
+              cont + colunas,
+              cont - colunas,
+            ];
           } else {
             this.grafo[cont] = [
               cont - 1,
@@ -37,23 +47,37 @@ export class AppComponent {
           }
         }else if(cont - colunas < 0 ){
           if (j == 0) {
+            this.grafo[cont] = [
+              cont + 1,
+              cont + colunas,
+            ];
           } else if (j == linhas - 1) {
+            this.grafo[cont] = [
+              cont - 1,
+              cont + colunas,
+            ];
           } else {
             this.grafo[cont] = [
               cont - 1,
               cont + 1,
               cont + colunas,
-              cont - colunas,
             ];
           }
         }else{
           if (j == 0) {
+            this.grafo[cont] = [
+              cont + 1,
+              cont - colunas,
+            ];
           } else if (j == linhas - 1) {
+            this.grafo[cont] = [
+              cont - 1,
+              cont - colunas,
+            ];
           } else {
             this.grafo[cont] = [
               cont - 1,
               cont + 1,
-              cont + colunas,
               cont - colunas,
             ];
           }
@@ -65,7 +89,7 @@ export class AppComponent {
   ngOnChanges() {
     this.larguraTela = window.innerWidth / 5;
     this.alturaTela = window.innerHeight / 5;
-    this.maximodenos = Math.trunc(this.larguraTela) * Math.trunc(alturaTela);
+    this.maximodenos = Math.trunc(this.larguraTela) * Math.trunc(this.alturaTela);
     this.nos = (this.tamanhono - 5) / this.maximodenos;
   }
 }
