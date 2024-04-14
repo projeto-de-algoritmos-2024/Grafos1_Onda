@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './no.component.html',
   styleUrl: './no.component.scss'
 })
+let tamanho = 20;
+let numero;
+
+
 export class NoComponent {
 
+  tamanho = tamanho;
+  numero-no = numero;
 }
+
