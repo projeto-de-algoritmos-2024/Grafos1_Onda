@@ -27,63 +27,18 @@ export class AppComponent {
     let cont = 0;
     for (let j = 0; j < linhas; j++) {
       for (let i = 0; i < colunas; i++) {
-        if ((cont - colunas) >= 0 && (cont + colunas) <= (colunas - 1)) {
-          if (j == 0) {
-            this.grafo[cont] = [
-              cont + 1,
-              cont + colunas,
-              cont - colunas,
-            ];
-          } else if (j == (linhas - 1)) {
-            this.grafo[cont] = [
-              cont - 1,
-              cont + colunas,
-              cont - colunas,
-            ];
-          } else {
-            this.grafo[cont] = [
-              cont - 1,
-              cont + 1,
-              cont + colunas,
-              cont - colunas,
-            ];
-          }
-        }else if((cont - colunas) < 0 ){
-          if (j == 0) {
-            this.grafo[cont] = [
-              cont + 1,
-              cont + colunas,
-            ];
-          } else if (j == (linhas - 1)) {
-            this.grafo[cont] = [
-              cont - 1,
-              cont + colunas,
-            ];
-          } else {
-            this.grafo[cont] = [
-              cont - 1,
-              cont + 1,
-              cont + colunas,
-            ];
-          }
-        }else{
-          if (j == 0) {
-            this.grafo[cont] = [
-              cont + 1,
-              cont - colunas,
-            ];
-          } else if (j == (linhas - 1)) {
-            this.grafo[cont] = [
-              cont - 1,
-              cont - colunas,
-            ];
-          } else {
-            this.grafo[cont] = [
-              cont - 1,
-              cont + 1,
-              cont - colunas,
-            ];
-          }
+        this.grafo[cont] = [];
+        if(j != 0){
+          this.grafo[cont].push((cont - colunas));
+        }
+        if(j != linhas - 1){
+          this.grafo[cont].push((cont + colunas));
+        }
+        if(i != 0){
+          this.grafo[cont].push((cont - 1));
+        }
+        if(i != colunas - 1){
+          this.grafo[cont].push((cont + 1));
         }
         console.log(cont+", "+colunas+", "+linhas);
         cont++;
@@ -91,6 +46,8 @@ export class AppComponent {
     }
     console.log("acabou");
   }
+
+  
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.larguraTela = window.innerWidth ;
@@ -98,7 +55,6 @@ export class AppComponent {
       console.log(this.larguraTela);
       console.log(this.alturaTela);
     }
-
     this.maximodenos = Math.trunc(this.larguraTela) * Math.trunc(this.alturaTela);
     this.nos = (this.tamanhono - 5) / this.maximodenos;
     this.populagrafo();
