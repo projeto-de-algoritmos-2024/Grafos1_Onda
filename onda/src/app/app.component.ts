@@ -20,6 +20,7 @@ export class AppComponent {
   alturaTela: any;
   tamanhono = 20;
   nos: any;
+  tempo = 1000;
   grafo: any = [];
   populagrafo() {
     const colunas = Math.trunc(this.larguraTela / (this.tamanhono));
@@ -47,7 +48,24 @@ export class AppComponent {
     console.log("acabou");
   }
 
-  
+  buscaEmLargura(no: number){
+    var grafocopia = JSON.parse(JSON.stringify(this.grafo));
+    console.log(grafocopia);
+    let lista = [no];
+    let time = this.tempo;
+    function busca(numerono: any){
+      if(!grafocopia[numerono].includes("explorado")){
+        lista.concat(grafocopia[numerono]);
+        grafocopia[numerono].push("explorado");
+        setTimeout(() => busca(lista[0]), time);
+
+      }else{
+        lista = lista.filter(item => item == numerono);
+        console.log("nó "+numerono+" explorado");
+      }
+    }
+  }
+
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.larguraTela = window.innerWidth ;
