@@ -1,31 +1,48 @@
 # Onda
 
 **Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Conteúdo da Disciplina**: Flood fill<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
 | 18/0128817  |  Pablo Santos Costa |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Nesse projeto busco realizar uma busca em largura inspirado no flood fill, isso em uma velocidade controlada para poder visulizar as camadas em forma de onda.
+Toda solicitação roda de forma simultanea em seu navegador local, com isso pude hospedar o software em funcionamento no [GitPages][gps], assim facilitando o uso.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Tipescript<br>
+**Framework**: Angular<br>
+
+### Pré-requisitos
+
+- node & npm atualizados
+
+### Rodar como desenvolvedor
+
+#### Ambiente
+Vá para a pasta do projeto Angular `cd onda` e instale as dependencias `npm i -g`.
+
+#### Rodando..
+Execulte o comando `ng serve` para rodar o servidor de desenvolvimento. Navegue em `http://localhost:4200/`. A aplicação será atualizada automaticamente assim que tiver qualquer alterações salvas nos arquivos.
+
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Após a execulção basta clicar na representação grafica do nó e ver a busca em largura acontecer em forma de onda.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Dependendo de quantas solicitações de busca, hardware ou resolução da tela o desenpenho do software vária.
 
-
+[gps]:[https://projeto-de-algoritmos-2024.github.io/Grafos1_Onda/]
 
 
