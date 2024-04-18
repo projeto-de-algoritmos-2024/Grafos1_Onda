@@ -12,6 +12,7 @@
 Nesse projeto busco realizar uma busca em largura inspirado no flood fill, isso em uma velocidade controlada para poder visualizar as camadas em forma de onda.
 Toda solicitação roda de forma simultânea em seu navegador local, com isso pude hospedar o software em funcionamento no [GitPages](https://projeto-de-algoritmos-2024.github.io/Grafos1_Onda/), assim facilitando o uso.
 
+Video apresentação: https://youtu.be/lCrk85EBPZE
 
 ## Screenshots
 
