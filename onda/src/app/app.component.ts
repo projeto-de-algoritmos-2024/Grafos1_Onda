@@ -20,7 +20,7 @@ export class AppComponent {
   alturaTela: any;
   tamanhono = 20;
   nos: any;
-  tempo = 1000;
+  tempo = 10;
   grafo: any = [];
   populagrafo() {
     const colunas = Math.trunc(this.larguraTela / (this.tamanhono));
@@ -55,14 +55,22 @@ export class AppComponent {
     let lista = [no];
     let time = this.tempo;
     function busca(numerono: any){
+      let noagora = document.getElementById(numerono.toString());
       if(!grafocopia[numerono].includes("explorado")){
         lista = lista.concat(grafocopia[numerono]);
         grafocopia[numerono].push("explorado");
         console.log(lista);
+
+        if (noagora) {
+        noagora.children[0].classList.add("ligaonda")}
         setTimeout(() => busca(lista[0]), time);
         console.log(numerono);
+        lista = lista.filter(item => item != numerono);
+
       }else{
         lista = lista.filter(item => item != numerono);
+        if (noagora) {
+          noagora.children[0].classList.remove("ligaonda")}
         console.log("nó "+numerono+" explorado");
         if(lista.length){
           busca(lista[0]);

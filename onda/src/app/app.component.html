@@ -1,4 +1,4 @@
 
 @for (no of grafo; track no) {
-  <app-no numerodono="{{$index + no}}" tempo="100" tamanho="20"></app-no>
+  <app-no id="{{$index}}" numerodono="{{$index + no}}" (click)="buscaEmLargura($index)" tempo="100" tamanho="{{tamanhono}}"></app-no>
 }
