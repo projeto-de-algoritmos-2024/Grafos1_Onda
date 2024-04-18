@@ -1,7 +1,21 @@
 div{
-  background-color: aqua;
+  background-color: #0054a9;
   &:hover {
-    background-color: violet;
+    background-color: azure;
   }
+}
+@keyframes coronda {
+  0% {
+    background-color: #0054a9;
+  }
+  50% {
+    background-color: #96f1ff;
+  }
+  100% {
+    background-color: #0054a9;
+  }
+}
+.ligaonda {
+  animation: coronda 1s;
 }
 
