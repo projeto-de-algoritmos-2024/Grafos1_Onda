@@ -48,22 +48,28 @@ export class AppComponent {
     console.log("acabou");
   }
 
-  buscaEmLargura(no: number){
+  buscaEmLargura(no: any){
     var grafocopia = JSON.parse(JSON.stringify(this.grafo));
     console.log(grafocopia);
+    console.log(no);
     let lista = [no];
     let time = this.tempo;
     function busca(numerono: any){
       if(!grafocopia[numerono].includes("explorado")){
-        lista.concat(grafocopia[numerono]);
+        lista = lista.concat(grafocopia[numerono]);
         grafocopia[numerono].push("explorado");
+        console.log(lista);
         setTimeout(() => busca(lista[0]), time);
-
+        console.log(numerono);
       }else{
-        lista = lista.filter(item => item == numerono);
+        lista = lista.filter(item => item != numerono);
         console.log("nó "+numerono+" explorado");
+        if(lista.length){
+          busca(lista[0]);
+        }
       }
     }
+    busca(no);
   }
 
   ngOnInit() {
