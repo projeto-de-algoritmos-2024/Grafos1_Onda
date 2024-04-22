@@ -1,6 +1,6 @@
 # Onda
 
-**Número da Lista**: X<br>
+**Número da Lista**: 28<br>
 **Conteúdo da Disciplina**: Flood fill<br>
 
 ## Alunos
